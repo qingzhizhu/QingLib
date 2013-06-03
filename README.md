@@ -3,6 +3,10 @@ QingLib
 
 My Falsh code.
 
+##引用的库
+- Starling, git clone git://github.com/PrimaryFeather/Starling-Framework.git
+
+
 ======================================================
 
 
