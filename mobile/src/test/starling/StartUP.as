@@ -12,7 +12,7 @@ package test.starling
 	 * ...
 	 * @author gengkun123@gmail.com
 	 */
-	[SWF(width="400", height="300", backgroundColor="0xCCCCCC", frameRate="60")]
+	//[SWF(width="400", height="300", backgroundColor="0xCCCCCC", frameRate="60")]
 	public class StartUP extends Sprite 
 	{
 		private var mStarling:Starling;
