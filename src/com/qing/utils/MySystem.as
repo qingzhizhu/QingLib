@@ -1,4 +1,5 @@
-package com.qing.utils 
+
+package com.qing.utils
 {	
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
@@ -8,20 +9,19 @@ package com.qing.utils
 	import flash.geom.Matrix;
 	import flash.system.Capabilities;
 	import flash.utils.getTimer;
-	
+
 	/**
-	 * 
-	 * @author kevin 
+	 * 系统属性，开启缓存等等
+	 * @author kevin geng
 	 */
 	public class MySystem
 	{
 		private static var _stage : Stage = null;
 		private static var _openCacheAsBt : Boolean = true;
 		
-		private static var _first : int = -1;
-		private static var _first_desktop : int = _first;
-		private static var _first_ios : int = _first;
-		private static var _first_android : int = _first;
+		private static var _first_desktop : int = -1;
+		private static var _first_ios : int = -1;
+		private static var _first_android : int = -1;
 		
 		/**
 		 * 
@@ -41,7 +41,7 @@ package com.qing.utils
 			return getTimer();
 		}
 		/**
-		 * 计算位图的内存， 传入Bitmap 或 BitmapData. wid x hei x 4 / 1024. 16x16像素是1kb.
+		 * 计算位图的内存， 传入Bitmap 或 BitmapData. wid x hei x 4 / 1024.
 		 * @param 返回单位 KB
 		 */
 		public static function countBitmapMem(bitmap : *):uint{
@@ -58,7 +58,7 @@ package com.qing.utils
 		 */        
 		public static function get isDesktop():Boolean
 		{
-			if(_first_desktop == _first){
+			if(!~_first_desktop){
 				_first_desktop = (Capabilities.playerType=="Desktop" || Capabilities.playerType=="ActiveX" || Capabilities.playerType=="PlugIn") ? 1 : 0;
 			}
 			return _first_desktop;
@@ -70,8 +70,8 @@ package com.qing.utils
 		 */
 		public static function get isIOS():Boolean 
 		{
-			if(_first_ios == _first){
-				_first_ios = (Capabilities.manufacturer.toLowerCase().indexOf("ios") != -1) ? 1 : 0;
+			if(!~_first_ios){
+				_first_ios = (~Capabilities.manufacturer.toLowerCase().indexOf("ios")) ? 1 : 0;
 			}
 			return _first_ios;
 		}
@@ -83,8 +83,8 @@ package com.qing.utils
 		 */
 		public static function get isAndroid():Boolean 
 		{
-			if(_first_android == _first){
-				_first_android = (Capabilities.manufacturer.toLowerCase().indexOf("android") != -1) ? 1 : 0;
+			if(!~_first_android){
+				_first_android = (~Capabilities.manufacturer.toLowerCase().indexOf("android")) ? 1 : 0;
 			}
 			return _first_android;
 		}
@@ -93,6 +93,7 @@ package com.qing.utils
 		 * 设置舞台质量
 		 */
 		public static function set stageQuality(qua : String):void{
+			if(_stage)
 			_stage.quality = qua;
 		}
 		/**
@@ -110,9 +111,9 @@ package com.qing.utils
 		/**
 		 * 当init（）方法的_openCacheAsBt 开时，
 		 * 启用位图缓存；当在桌面平台开启位图矩阵，bitmap不要使用此方法。
-		 * 
+		 * @param opaqueColor 背景颜色。 -1 不使用此属性
 		 */
-		public static function openCacheAsBt(dis:DisplayObject):void{
+		public static function openCacheAsBt(dis:DisplayObject, opaqueColor:int=-1):void{
 			if(dis is Bitmap){
 				trace("bitmap don't open cacheAsBitmap");
 				return;
@@ -121,9 +122,10 @@ package com.qing.utils
 				dis.cacheAsBitmap = true;
 				if(isDesktop) dis.cacheAsBitmapMatrix = new Matrix();
 			}
+			if(~opaqueColor){
+				dis.opaqueBackground = opaqueColor;
+			}
 		}
 		
 	}
 }
-
-

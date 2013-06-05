@@ -1,5 +1,6 @@
 package test.starling 
 {
+	import com.qing.utils.MySystem;
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
@@ -33,7 +34,7 @@ package test.starling
 			
             mStarling.start();
 			
-			
+			trace("android:", MySystem.isAndroid, "iso:", MySystem.isIOS);
 		}
 		
 	}
