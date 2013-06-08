@@ -6,8 +6,8 @@
     <movie input="" />
     <movie path="bin\as3.swf" />
     <movie fps="30" />
-    <movie width="800" />
-    <movie height="600" />
+    <movie width="320" />
+    <movie height="480" />
     <movie version="11" />
     <movie minorVersion="4" />
     <movie platform="Flash Player" />
@@ -18,6 +18,7 @@
     <class path="src" />
     <class path="..\src" />
     <class path="..\assets" />
+    <class path="..\system" />
     <class path="..\..\Starling-Framework\starling\src" />
   </classpaths>
   <!-- Build options -->
@@ -44,7 +45,7 @@
     <option linkReport="" />
     <option loadExterns="" />
     <option staticLinkRSL="True" />
-    <option additional="" />
+    <option additional="-define+=CONFIG::WEB,true, -define+=CONFIG::MOBILE,false" />
     <option compilerConstants="" />
     <option minorVersion="" />
   </build>
@@ -83,10 +84,10 @@
   <!-- Executed before build -->
   <preBuildCommand />
   <!-- Executed after build -->
-  <postBuildCommand alwaysRun="False" />
+  <postBuildCommand alwaysRun="False">"D:\Python27\python.exe" "$(ProjectDir)\..\add-opt-in.py" "$(OutputDir)\$(OutputName)"</postBuildCommand>
   <!-- Other project options -->
   <options>
-    <option showHiddenPaths="False" />
+    <option showHiddenPaths="True" />
     <option testMovie="Default" />
   </options>
   <!-- Plugin storage -->

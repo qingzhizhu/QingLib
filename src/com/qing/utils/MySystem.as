@@ -120,7 +120,7 @@ package com.qing.utils
 			}
 			if(_openCacheAsBt){
 				dis.cacheAsBitmap = true;
-				if(isDesktop) dis.cacheAsBitmapMatrix = new Matrix();
+				if(isDesktop) dis["cacheAsBitmapMatrix"] = new Matrix();
 			}
 			if(~opaqueColor){
 				dis.opaqueBackground = opaqueColor;
