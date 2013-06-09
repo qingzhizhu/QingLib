@@ -2,37 +2,25 @@ package test.starling
 {
 	import com.qing.utils.MySystem;
 	import flash.display.Bitmap;
+	import flash.display.BitmapData;
+	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.geom.Rectangle;
-	import flash.system.Capabilities;
 	import starling.core.Starling;
 	import starling.events.Event;
 	import starling.textures.Texture;
 	import starling.utils.AssetManager;
 	import starling.utils.formatString;
-	import starling.utils.RectangleUtil;
-	import starling.utils.ScaleMode;
 	
 	/**
-	 * ...
+	 * 全屏 starling
 	 * @author gengkun123@gmail.com
 	 */
-	public class StartUP extends Sprite 
+	[SWF(width="480", height="320", backgroundColor="0xCCCCCC")]
+	public class FullScreen extends Sprite 
 	{
-		// Startup image for SD screens
-        [Embed(source="../../../../system/startup.jpg")]
-        private static var Background:Class;
-        
-        // Startup image for HD screens
-        [Embed(source="../../../../system/startupHD.jpg")]
-        private static var BackgroundHD:Class;
-		
 		private var mStarling:Starling;
-		
-		private var _stageWidth : int = 320;
-		private var _stageHeight : int = 480;
-		
-		public function StartUP() 
+		public function FullScreen() 
 		{
 			if (stage) init();
 			else addEventListener(Event.ADDED_TO_STAGE, init);
@@ -45,31 +33,17 @@ package test.starling
 			stage.align = "TL";
 			stage.scaleMode = "noScale";
 			
-			var stageWidth:int  = _stageWidth;
-            var stageHeight:int = _stageHeight;
+			//横屏时, 不在使用
+			//stage.setAspectRatio("landscape");
+			//var isLandscapeNow:Boolean = (stageWidth > stageHeight); Constants.isLandscape;
+			//var screenWidth:int  = Math.max(stage.fullScreenWidth, stage.fullScreenHeight) ;
+			//var screenHeight:int = Math.min(stage.fullScreenWidth, stage.fullScreenHeight);
 			
-			var iOS:Boolean = MySystem.isIOS;
-			
-			Starling.multitouchEnabled = true; // for Multitouch Scene
-            Starling.handleLostContext = !iOS; // required on Windows, needs more memory
-            
-			
-			// create a suitable viewport for the screen size
-            // 
-            // we develop the game in a *fixed* coordinate system of 320x480; the game might 
-            // then run on a device with a different resolution; for that case, we zoom the 
-            // viewPort to the optimal size for any display and load the optimal textures.
-            
-			CONFIG::MOBILE{
-            var viewPort:Rectangle = RectangleUtil.fit(
-                new Rectangle(0, 0, stageWidth, stageHeight), 
-                new Rectangle(0, 0, stage.fullScreenWidth, stage.fullScreenHeight), 
-                ScaleMode.SHOW_ALL, iOS);
-			}
-			CONFIG::WEB{
-			var viewPort:Rectangle = new Rectangle(0, 0, stage.stageWidth, stage.stageHeight);
-			}
-			var scaleFactor:int = viewPort.width < stageHeight ? 1 : 2; // midway between 320 and 640
+			//set full screen view port.
+			var screenWidth:int = Constants.GameWidth;
+			var screenHeight:int = Constants.GameHeight;
+			var viewPort : Rectangle = new Rectangle(0, 0, screenWidth, screenHeight);
+			var scaleFactor:int = 1;
 			
 			// While Stage3D is initializing, the screen will be blank. To avoid any flickering, 
             // we display a startup image now and remove it below, when Starling is ready to go.
@@ -82,22 +56,46 @@ package test.starling
             // Note that we cannot embed "Default.png" (or its siblings), because any embedded
             // files will vanish from the application package, and those are picked up by the OS!
             
-            var background:Bitmap = scaleFactor == 1 ? new Background() : new BackgroundHD();
-            Background = BackgroundHD = null; // no longer needed!
+            var background:Bitmap = null;
+			//测试没有loading图片，用shape代替了。。。
+			//background = scaleFactor == 1 ? new Background() : new BackgroundHD();
+            //Background = BackgroundHD = null; // no longer needed!
             
+			if (true) {
+				var shape : Shape = new Shape();
+				shape.graphics.lineStyle(1);
+				shape.graphics.beginFill(0xFFFF, 0.5);
+				shape.graphics.drawRect(0, 0, screenWidth, screenHeight);
+				shape.graphics.endFill();
+				var btd : BitmapData = new BitmapData(screenWidth, screenHeight);
+				btd.draw(shape);
+				shape = null;
+				background = new Bitmap(btd);
+			}
+			
             background.x = viewPort.x;
             background.y = viewPort.y;
             background.width  = viewPort.width;
             background.height = viewPort.height;
             background.smoothing = true;
             addChild(background);
-            
-            // launch Starling
+			
+			
+			
+			
+			var iOS:Boolean = MySystem.isIOS;
+			
+			Starling.multitouchEnabled = true; // for Multitouch Scene
+            Starling.handleLostContext = !iOS; // required on Windows, needs more memory
+			
+			
+			
+			// launch Starling
 				
 			
             mStarling = new Starling(Game, stage, viewPort);
             mStarling.simulateMultitouch = true;
-            mStarling.enableErrorChecking = Capabilities.isDebugger;
+            mStarling.enableErrorChecking = Constants.isDebugger;
             mStarling.start();
             
             // this event is dispatched when stage3D is set up
@@ -109,10 +107,10 @@ package test.starling
 				
 				 // create the AssetManager, which handles all required assets for this resolution
 				
-				var scaleFactor:int = mStarling.viewPort.width < _stageHeight ? 1 : 2; // midway between 320 and 640
+				var scaleFactor:int = 1;// mStarling.viewPort.width < _stageHeight ? 1 : 2; // midway between 320 and 640
 				
 				var assets:AssetManager = new AssetManager(scaleFactor);            
-				assets.verbose = Capabilities.isDebugger;
+				assets.verbose = Constants.isDebugger;
 				
 				//air, android, iso..
 				CONFIG::MOBILE {
@@ -131,7 +129,7 @@ package test.starling
 				assets.enqueue(EmbeddedAssets);
 				}
 			
-                removeChild(background);
+                //removeChild(background);
                 
                 var game:Game = mStarling.root as Game;
                 var bgTexture:Texture = Texture.fromBitmap(background, false, false, scaleFactor);
@@ -141,10 +139,7 @@ package test.starling
             });
 			
 			
-			
 		}
-		
-		
 		
 	}
 

@@ -17,6 +17,9 @@
   <classpaths>
     <class path="src" />
     <class path="..\src" />
+    <class path="..\..\Starling-Framework\starling\src" />
+    <class path="..\assets" />
+    <class path="..\system" />
   </classpaths>
   <!-- Build options -->
   <build>
@@ -42,7 +45,7 @@
     <option linkReport="" />
     <option loadExterns="" />
     <option staticLinkRSL="True" />
-    <option additional="" />
+    <option additional="-define+=CONFIG::WEB,false, -define+=CONFIG::MOBILE,true" />
     <option compilerConstants="" />
     <option minorVersion="" />
   </build>
