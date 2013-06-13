@@ -6,9 +6,13 @@ package test.starling
 	import starling.core.Starling;
 	import test.starling.better.QuadBatchTest;
 	import test.starling.customDisplayobject.CustomDisObjTest;
+	import test.starling.feathers.HelloWorld;
 	import test.starling.image.ImageTest;
 	import test.starling.startup.Game;
+	import test.starling.text.TextTest;
+	import test.starling.third.ParticleTest;
 	import test.starling.touch.MultitouchTest;
+	import test.starling.tween.TweenTest;
 	
 	/**
 	 * 单个文件测试
@@ -37,7 +41,20 @@ package test.starling
 			//mStarling = new Starling(QuadBatchTest, stage);
 			
 			//----------custom displayobject test----------
-			mStarling = new Starling(CustomDisObjTest, stage);
+			//mStarling = new Starling(CustomDisObjTest, stage);
+			
+			//----------custom displayobject test----------
+			//mStarling = new Starling(CustomDisObjTest, stage);
+			
+			//---------- 文本  test----------
+			//mStarling = new Starling(TextTest, stage);
+			
+			//---------- 粒子系统 test----------
+			//mStarling = new Starling(ParticleTest, stage);
+			
+			//---------- feather ui test----------
+			mStarling = new Starling(HelloWorld, stage);
+			
 			
             mStarling.start();
 			

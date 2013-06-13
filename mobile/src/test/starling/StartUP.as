@@ -103,7 +103,7 @@ package test.starling
             // this event is dispatched when stage3D is set up
             mStarling.addEventListener(Event.ROOT_CREATED, function():void
             {
-				// set framerate to 30 in software mode
+				// set framerate to 30 in software mode 没有gpu
 				if (mStarling.context.driverInfo.toLowerCase().indexOf("software") != -1)
 					mStarling.nativeStage.frameRate = 30;
 				

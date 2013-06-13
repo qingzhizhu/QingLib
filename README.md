@@ -5,7 +5,9 @@ My Falsh code.
 
 ##引用的库
 - Starling, git clone git://github.com/PrimaryFeather/Starling-Framework.git
+- Starling 粒子系统 , git clone git@github.com:PrimaryFeather/Starling-Extension-Particle-System.git
 
+- box2d, http://box2dflash.sourceforge.net/
 
 ======================================================
 

@@ -6,6 +6,7 @@ package test.starling
 	import starling.core.Starling;
 	import test.starling.better.QuadBatchTest;
 	import test.starling.customDisplayobject.CustomDisObjTest;
+	import test.starling.event.ResizeEventTest;
 	import test.starling.image.ImageTest;
 	import test.starling.startup.Game;
 	import test.starling.touch.MultitouchTest;
@@ -37,7 +38,11 @@ package test.starling
 			//mStarling = new Starling(QuadBatchTest, stage);
 			
 			//----------custom displayobject test----------
-			mStarling = new Starling(CustomDisObjTest, stage);
+			//mStarling = new Starling(CustomDisObjTest, stage);
+			
+			
+			//----------事件 test----------
+			mStarling = new Starling(ResizeEventTest, stage);
 			
             mStarling.start();
 			

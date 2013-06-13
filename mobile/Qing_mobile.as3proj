@@ -19,6 +19,10 @@
     <class path="..\src" />
     <class path="..\assets" />
     <class path="..\..\Starling-Framework\starling\src" />
+    <class path="..\..\Starling-Extension-Particle-System\src" />
+    <class path="..\..\feathers\source" />
+    <class path="..\..\feathers\themes\MetalWorksMobileTheme\source" />
+    <class path="..\..\feathers\themes\MetalWorksMobileTheme\assets" />
   </classpaths>
   <!-- Build options -->
   <build>
