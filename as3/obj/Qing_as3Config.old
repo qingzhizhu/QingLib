@@ -16,7 +16,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'2013/6/13'</value>
+      <value>'2013/6/14'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -37,11 +37,11 @@
       <path-element>D:\git\QingLib\assets</path-element>
       <path-element>D:\git\QingLib\system</path-element>
       <path-element>D:\git\Starling-Framework\starling\src</path-element>
-      <path-element>d:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
+      <path-element>D:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
   </compiler>
   <file-specs>
-    <path-element>D:\git\QingLib\as3\src\test\starling\StartUPTest.as</path-element>
+    <path-element>D:\git\QingLib\as3\src\test\tool\MirrorBitmapTest.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>
