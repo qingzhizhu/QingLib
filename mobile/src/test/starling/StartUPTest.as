@@ -6,11 +6,14 @@ package test.starling
 	import starling.core.Starling;
 	import test.starling.better.QuadBatchTest;
 	import test.starling.customDisplayobject.CustomDisObjTest;
+	import test.starling.displayobject.SpriteTest;
 	import test.starling.feathers.HelloWorld;
 	import test.starling.image.ImageTest;
 	import test.starling.startup.Game;
 	import test.starling.text.TextTest;
+	import test.starling.third.GaugeTest;
 	import test.starling.third.ParticleTest;
+	import test.starling.third.JoyStickTest;
 	import test.starling.touch.MultitouchTest;
 	import test.starling.tween.TweenTest;
 	
@@ -52,8 +55,17 @@ package test.starling
 			//---------- 粒子系统 test----------
 			//mStarling = new Starling(ParticleTest, stage);
 			
+			//---------- 操作杆 test----------
+			//mStarling = new Starling(JoyStickTest, stage);
+			
 			//---------- feather ui test----------
-			mStarling = new Starling(HelloWorld, stage);
+			//mStarling = new Starling(HelloWorld, stage);
+			
+			//---------- 遮罩 sprite test----------
+			//mStarling = new Starling(SpriteTest, stage);
+			
+			//---------- 进度条 test----------
+			//mStarling = new Starling(GaugeTest, stage);
 			
 			
             mStarling.start();

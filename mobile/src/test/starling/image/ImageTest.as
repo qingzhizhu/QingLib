@@ -36,7 +36,8 @@ package test.starling.image
 			//img.setTexCoords(3, p);
 			
 			//----------平铺图片---------
-			StarlingUtils.tileImg(img, 2, 2);
+			//StarlingUtils.tileImg(img, 2, 2);
+			
 			
 			Starling.current.nativeStage.addEventListener(MouseEvent.MOUSE_WHEEL, onMouseWheel);
 		}

@@ -16,7 +16,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'2013/6/14'</value>
+      <value>'2013/6/17'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -41,7 +41,7 @@
     </source-path>
   </compiler>
   <file-specs>
-    <path-element>D:\git\QingLib\as3\src\test\tool\MirrorBitmapTest.as</path-element>
+    <path-element>D:\git\QingLib\as3\src\test\tool\ObjectPoolTest.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>
