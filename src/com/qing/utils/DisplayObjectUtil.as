@@ -80,6 +80,24 @@ package com.qing.utils
 			}
 		}
 		
+		/**
+		 * 用graphics画个矩形
+		 * @param	g
+		 * @param	isAdd 默认是画，false是clear
+		 * @param	color
+		 * @param	alpha
+		 */
+		public static function drawLayerByGraphics(g:Graphics, wid:int, hei:int, isAdd:Boolean=true, color:uint = 0, alpha:Number = 0.6):void {
+			if (isAdd) {
+				g.clear();
+				g.beginFill(color, alpha);
+				g.drawRect(0, 0, wid, hei);
+				g.endFill();
+			}else {
+				g.clear();
+			}
+		}
+		
 		public static function drawGrayLayerBySize(source:Sprite, wid:int, hei:int, isAdd:Boolean=true, color:uint = 0, alpha:Number = 0.6):void {
 			var g : Graphics = source.graphics;
 			if(isAdd){

@@ -4,7 +4,7 @@ package test.tool
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	/**
-	 * ...
+	 * 对象池
 	 * @author gengkun123@gmail.com
 	 */
 	public class ObjectPoolTest extends Sprite

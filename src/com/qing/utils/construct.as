@@ -27,8 +27,8 @@
 package com.qing.utils 
 {
 	/**
-	 * This function is used to construct an object from the class and an array of parameters.
-	 * 
+	 * This function is used to construct an object from the class and an array of parameters.<br/>
+	 *(function.apply can’t be used to call the constructor).
 	 * @param type The class to construct.
 	 * @param parameters An array of up to ten parameters to pass to the constructor.
 	 */
