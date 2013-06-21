@@ -43,7 +43,10 @@ package net.richardlord.fsm
 			_previousState = null;
 			_nextState = null;
 		}
-		
+		/**
+		 * 初始化states
+		 * @param	...instances
+		 */
 		public function primeStates( ...instances ) : void
 		{
 			for each( var state : State in instances )

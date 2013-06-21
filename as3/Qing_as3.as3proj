@@ -6,8 +6,8 @@
     <movie input="" />
     <movie path="bin\as3.swf" />
     <movie fps="30" />
-    <movie width="320" />
-    <movie height="480" />
+    <movie width="800" />
+    <movie height="600" />
     <movie version="11" />
     <movie minorVersion="4" />
     <movie platform="Flash Player" />
@@ -75,7 +75,7 @@
   </library>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>
-    <compile path="src\test\tool\HitDemoTest.as" />
+    <compile path="src\test\fsm\demo\Main.as" />
   </compileTargets>
   <!-- Paths to exclude from the Project Explorer tree -->
   <hiddenPaths>
