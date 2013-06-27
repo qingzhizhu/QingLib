@@ -1,6 +1,7 @@
 package test.as3 
 {
 	import flash.display.Sprite;
+	import flash.geom.Point;
 	import net.richardlord.utils.FunctionUtils;
 	
 	/**
@@ -25,20 +26,34 @@ package test.as3
 			//}
 			
 			//没搞懂其意思。
-			trace("functionUtils test");
+			/*trace("functionUtils test");
 			var fun : Function = FunctionUtils.adaptFunction(test, FunctionUtils.PARAM_1, FunctionUtils.PARAM_2);
 			trace(fun);
 			fun();
 			
 			var fun2 : Function = FunctionUtils.adaptFunction(test, FunctionUtils.PARAM_1, FunctionUtils.PARAM_2);
 			trace(fun2);
-			fun2();
+			fun2();*/
+			
+			
+			test.call(null, 100);
+			
+			var point : Point = new Point();
+			test.call(point, 200);
+			
+			function testThis():void {
+				trace("testThis:", this);
+			};
+			
+			testThis(point);
+			
         }
 
 		
 		
 		private function test(a:int):void {
 			trace("test fun:", arguments, arguments.length);
+			trace("thisobject", this );
 		}
 		
 		//---------------------------arguments---------

@@ -11,13 +11,19 @@ package com.qing.utils
 	public class DisplayObjectUtil 
 	{
 		/**
-		 * 将 source 的child放在其他容器中
+		 * 将 source 的child放在其他容器中,层级不改变 
 		 * @param	source
 		 * @param	container
+		 * @param	setChild 将child.name 相同的设置在container中
 		 */
-		public static function childToAnthorContainer(source:Sprite, container:Sprite):void {
-			while (source.numChildren) {
-				container.addChild(source.removeChildAt(0));
+		public static function childToAnthorContainer(source:Sprite, container:Sprite, setChild:Boolean=true):void {
+			var child : DisplayObject = null;
+			while(source.numChildren){
+				child = source.removeChildAt(0);
+				if(setChild && container.hasOwnProperty(child.name)){
+					container[child.name] = child;
+				}
+				container.addChild(child);
 			}
 		}
 		
