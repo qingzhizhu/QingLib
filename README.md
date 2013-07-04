@@ -5,12 +5,35 @@ My Falsh code.
 
 ##引用的库
 - Starling, git clone git://github.com/PrimaryFeather/Starling-Framework.git
-- Starling 粒子系统 , git clone git@github.com:PrimaryFeather/Starling-Extension-Particle-System.git
+- [Starling 粒子系统 , git clone git@github.com:PrimaryFeather/Starling-Extension-Particle-System.git
 
-- box2d, http://box2dflash.sourceforge.net/
+- [box2d](http://box2dflash.sourceforge.net/)
+- [Pixel Perfect Touch](https://github.com/krechagames/starling-extensions)
 
-======================================================
 
+
+
+##功能
+
+###flash demo
+- 多点触摸 gesture.
+- KeyPoll 模仿as2做的键盘监听. KeyPoll.keyDown();
+- stage3d context3d_drawtobitmap.
+ 
+
+###工具类
+- StringUtil 获取汉字长度
+
+
+
+###starling extension deom
+1. Joystick 操纵杆
+2. distancd font .
+3. graphics 模仿AS3的graphic
+4. ParticleSystem  粒子系统
+5. Pixel Perfect touch 这个插件写的透明图片不可点击测试有问题，但里面的 ScrollImage 位图滚动图，很强大。
+6. Guage 简单进度条.
+7. 
 
 
 

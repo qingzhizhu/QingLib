@@ -21,6 +21,13 @@ package
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			// entry point
 		}
+
+		private var _name : String = null;
+
+		private function test():void{
+				this._name = "Hello from Sublime Text!";
+
+		}
 		
 	}
 	

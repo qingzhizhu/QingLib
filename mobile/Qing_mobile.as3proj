@@ -23,6 +23,7 @@
     <class path="..\..\feathers\source" />
     <class path="..\..\feathers\themes\MetalWorksMobileTheme\source" />
     <class path="..\..\feathers\themes\MetalWorksMobileTheme\assets" />
+    <class path="..\..\starling-extensions\src" />
   </classpaths>
   <!-- Build options -->
   <build>
@@ -78,7 +79,7 @@
   </library>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>
-    <compile path="src\test\as3\orientation\SpriteLayoutApp.as" />
+    <compile path="src\test\stage3d\Context3D_drawToBitmapData.as" />
   </compileTargets>
   <!-- Paths to exclude from the Project Explorer tree -->
   <hiddenPaths>

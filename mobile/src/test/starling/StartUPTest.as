@@ -4,11 +4,13 @@ package test.starling
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
 	import starling.core.Starling;
+	import starling.extensions.krecha.PixelImageTouch;
 	import test.starling.better.QuadBatchTest;
 	import test.starling.customDisplayobject.CustomDisObjTest;
 	import test.starling.displayobject.SpriteTest;
 	import test.starling.feathers.HelloWorld;
 	import test.starling.image.ImageTest;
+	import test.starling.PixelPerfectTouch.PixelPerfectTouchDemo;
 	import test.starling.startup.Game;
 	import test.starling.text.TextTest;
 	import test.starling.third.GaugeTest;
@@ -66,6 +68,9 @@ package test.starling
 			
 			//---------- 进度条 test----------
 			//mStarling = new Starling(GaugeTest, stage);
+			
+			//---------- 进度条 test----------
+			mStarling = new Starling(PixelPerfectTouchDemo, stage);
 			
 			
             mStarling.start();
