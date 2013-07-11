@@ -88,6 +88,52 @@ package com.qing.utils
 			
 		}
 		
+		public static function getKey(arr:Array, sort:int=Array.NUMERIC):Array {
+			var a : Array = [];
+			for(var p : * in arr) {
+				a.push(p);
+			}
+			return a.sort(sort);
+		}
+		
+		public static function getValue(arr:Array, sort:int=Array.NUMERIC):Array {
+			var a : Array = [];
+			for each(var p : * in arr) {
+				a.push(p);
+			}
+			return a.sort(sort);
+		}
+		
+		/**
+		 * 使用比较受限制，<br/>
+		 * var arr : Array = [];
+			arr[5] = 1;
+			arr[10] = 2;
+			arr[30] = 4;
+			
+			trace(ArrayUtil.getNearbyValue(1, arr));
+			trace(ArrayUtil.getNearbyValue(5, arr));
+		 * @param	key
+		 * @param	arr
+		 * @return
+		 */
+		public static function getNearbyValue(key:int, arr:Array):*{
+			if (arr[key]) {
+				return arr[key];
+			}
+			var end : int = arr.length - 1;
+			if (key >= end) {
+				return arr[end];
+			}
+			var tempArray : Array = arr.concat();
+			tempArray[key] = 0;
+			tempArray = getKey(tempArray);
+			//tempArray.sort(Array.NUMERIC);
+			var index : int = tempArray.indexOf(key);
+			index = index > 0 ? index - 1 : 0;
+			return getValue(arr)[index];
+		}
+		
 	}
 
 }

@@ -11,9 +11,9 @@ package com.qing.utils
 		 * @param	caller 类似 function testTwo(name, ...params):void;
 		 * @param	...params
 		 */
-		public static function sendParams(caller:Function, ...params):void {
+		public static function sendParams(caller:Function, ...params):* {
 			if (caller != null) {
-				caller.apply(null, params);
+				return caller.apply(null, params);
 			}
 		}
 		
