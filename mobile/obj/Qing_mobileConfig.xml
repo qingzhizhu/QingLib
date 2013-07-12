@@ -16,7 +16,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'2013/7/4'</value>
+      <value>'2013/7/12'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -41,11 +41,11 @@
       <path-element>D:\git\feathers\themes\MetalWorksMobileTheme\source</path-element>
       <path-element>D:\git\feathers\themes\MetalWorksMobileTheme\assets</path-element>
       <path-element>D:\git\starling-extensions\src</path-element>
-      <path-element>D:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
+      <path-element>d:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
   </compiler>
   <file-specs>
-    <path-element>D:\git\QingLib\mobile\src\test\stage3d\Context3D_drawToBitmapData.as</path-element>
+    <path-element>D:\git\QingLib\mobile\src\test\media\MicrophoneExample.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>

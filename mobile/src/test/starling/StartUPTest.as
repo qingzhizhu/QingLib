@@ -11,6 +11,7 @@ package test.starling
 	import test.starling.feathers.HelloWorld;
 	import test.starling.image.ImageTest;
 	import test.starling.PixelPerfectTouch.PixelPerfectTouchDemo;
+	import test.starling.quadtree.QuadtreeSpriteExample;
 	import test.starling.startup.Game;
 	import test.starling.text.TextTest;
 	import test.starling.third.GaugeTest;
@@ -71,6 +72,8 @@ package test.starling
 			
 			//---------- 进度条 test----------
 			mStarling = new Starling(PixelPerfectTouchDemo, stage);
+			
+			
 			
 			
             mStarling.start();

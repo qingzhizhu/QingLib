@@ -16,7 +16,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'2013/7/11'</value>
+      <value>'2013/7/12'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -41,7 +41,7 @@
     </source-path>
   </compiler>
   <file-specs>
-    <path-element>D:\git\QingLib\as3\src\test\as3\As3UtilsTest.as</path-element>
+    <path-element>D:\git\QingLib\as3\src\test\media\MicrophoneExample.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>

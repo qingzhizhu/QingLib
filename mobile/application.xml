@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <application xmlns="http://ns.adobe.com/air/application/3.7">
   <id>air.mobile</id>
   <versionNumber>0.1</versionNumber>
@@ -10,6 +10,7 @@
 	<uses-sdk android:minSdkVersion="8" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-feature android:required="true" android:name="android.hardware.touchscreen.multitouch" />
+	<uses-permission android:name="android.permission.CAMERA"/>
 </manifest>]]></manifestAdditions>
   </android>
   <iPhone>
