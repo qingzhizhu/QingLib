@@ -24,6 +24,7 @@
     <class path="..\..\feathers\themes\MetalWorksMobileTheme\source" />
     <class path="..\..\feathers\themes\MetalWorksMobileTheme\assets" />
     <class path="..\..\starling-extensions\src" />
+    <class path="..\..\StarlingPunk\lib" />
   </classpaths>
   <!-- Build options -->
   <build>
@@ -79,7 +80,7 @@
   </library>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>
-    <compile path="src\test\media\MicrophoneExample.as" />
+    <compile path="src\test\punk\Main.as" />
   </compileTargets>
   <!-- Paths to exclude from the Project Explorer tree -->
   <hiddenPaths>

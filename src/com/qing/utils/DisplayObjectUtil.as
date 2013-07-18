@@ -127,6 +127,35 @@ package com.qing.utils
 			}
 		}
 		
+		/**
+		 * 画一个 圆角矩形
+		 * @param source is sprite | shape | graphics
+		 * @param wid
+		 * @param hei
+		 * @param thickness
+		 * @param lineColor
+		 * @param fillColor
+		 * @param ellipseWidth
+		 * @param ellipseHeight
+		 * @param x
+		 * @param y
+		 * 
+		 */		
+		public static function drawRoundRect(source:*, wid:int, hei:int, thickness:int=2, lineColor:uint=0xA08F61, fillColor:uint=0x735A3F, ellipseWidth:int=10, ellipseHeight:int=10, x:int=0, y:int=0):void{
+			var g : Graphics = null;
+			if(source.hasOwnProperty("graphics")){
+				g = source.graphics;
+			}else if(source is Graphics){
+				g = source;
+			}
+			if(g){
+				g.lineStyle(thickness, lineColor, 1);
+				g.beginFill(fillColor, 1);
+				g.drawRoundRect(x, y, wid, hei, ellipseWidth, ellipseHeight);
+				g.endFill();
+			}
+		}
+		
 	}
 
 }

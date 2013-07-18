@@ -133,6 +133,21 @@ package com.qing.utils
 			index = index > 0 ? index - 1 : 0;
 			return getValue(arr)[index];
 		}
+		/**
+		 * Here is a handy (and fast!) function for shuffling the elements of an Array or Vector using the Fisher-Yates Shuffle:
+		 * @param	a
+		 */
+		public static function shuffle(a:Object):void
+		{
+			var i:int = a.length, j:int, t:*;
+			while (-- i)
+			{
+				t = a[i];
+				j = Math.random() * (i + 1);
+				a[i] = a[j];
+				a[j] = t;
+			}
+		}
 		
 	}
 
