@@ -3,11 +3,20 @@ package com.qing.utils
 	/**
 	 * 几个排序算法，主要用于数值排序.<br/>
 	 * 1万条数据：<br/>
+	 * <p> 正序
 	 * [Logger-trace] sortAdobe 官方sort 排序：,4
 [Logger-trace] 冒泡排序 ：,7570
 [Logger-trace] 鸡尾酒-定向冒泡排序：,5820
 [Logger-trace] 插入排序：,2752
 [Logger-trace] 快速排序：,20
+	 * </p>
+	 * <p>倒序
+	 * [Logger-trace] sortAdobe 官方sort 排序：,1239
+[Logger-trace] flash punk 快速排序：,153
+	 * 
+	 * </p>
+	 * 
+	 * 
 
 	 * @author gengkun123@gmail.com
 	 */
@@ -16,11 +25,15 @@ package com.qing.utils
 		
 		/**
 		 * 原始的排序
-		 * @param	arr
+		 * @param	arr , Array or Vector.<*>
 		 * @param	asc 升序
 		 */
-		public static function adobeSort(arr:Array, asc:Boolean=true):Array {
-			return asc ? arr.sort(Array.NUMERIC) : arr.sort(Array.DESCENDING);
+		public static function adobeSort(arr:*, asc:Boolean=true):Array {
+			return arr.sort(asc ? Array.NUMERIC : Array.DESCENDING);
+		}
+		
+		public static function adobeSortOn(arr:*, fieldName:Object, asc:Boolean = true):Array {
+			return arr.sortOn(fieldName, asc ? Array.NUMERIC : Array.DESCENDING);
 		}
 		
 		/**         
@@ -195,7 +208,117 @@ package com.qing.utils
                 bottom = bottom + 1;    
             }
             return arr;  
-        } 
+        }
+		
+		
+		
+		/**
+		 * Sorts the elements in the array.
+		 * @param	object		The Object to sort (an Array or Vector).
+		 * @param	ascending	If it should be sorted ascending (true) or descending (false).
+		 */
+		public static function sort(object:Object, ascending:Boolean = true):void
+		{
+			//正序使用as3中的，测试的时候去掉这个判断
+			if (object is Array || object is Vector.<*> ) {
+				if (ascending) {
+					adobeSort(object, ascending);
+				}else{
+					quicksort(object, 0, object.length - 1, ascending);
+				}
+			}
+		}
+		
+		/**
+		 * Sorts the elements in the array by a property of the element.
+		 * @param	object		The Object to sort (an Array or Vector).
+		 * @param	property	The numeric property of object's elements to sort by.
+		 * @param	ascending	If it should be sorted ascending (true) or descending (false).
+		 */
+		public static function sortBy(object:Object, property:String, ascending:Boolean = true):void
+		{
+			if (object is Array || object is Vector.<*> ) {
+				if (ascending) {
+					adobeSortOn(object, property, ascending);
+				}else {
+					quicksortBy(object, 0, object.length - 1, ascending, property);
+				}
+			}
+		}
+		
+		/** @private Quicksorts the array. */ 
+		private static function quicksort(a:Object, left:int, right:int, ascending:Boolean):void
+		{
+			var i:int = left, j:int = right, t:Number,
+				p:* = a[Math.round((left + right) * .5)];
+			if (ascending)
+			{
+				while (i <= j)
+				{
+					while (a[i] < p) i ++;
+					while (a[j] > p) j --;
+					if (i <= j)
+					{
+						t = a[i];
+						a[i ++] = a[j];
+						a[j --] = t;
+					}
+				}
+			}
+			else
+			{
+				while (i <= j)
+				{
+					while (a[i] > p) i ++;
+					while (a[j] < p) j --;
+					if (i <= j)
+					{
+						t = a[i];
+						a[i ++] = a[j];
+						a[j --] = t;
+					}
+				}
+			}
+			if (left < j) quicksort(a, left, j, ascending);
+			if (i < right) quicksort(a, i, right, ascending);
+		}
+		
+		/** @private Quicksorts the array by the property. */ 
+		private static function quicksortBy(a:Object, left:int, right:int, ascending:Boolean, property:String):void
+		{
+			var i:int = left, j:int = right, t:Object,
+				p:* = a[Math.round((left + right) * .5)][property];
+			if (ascending)
+			{
+				while (i <= j)
+				{
+					while (a[i][property] < p) i ++;
+					while (a[j][property] > p) j --;
+					if (i <= j)
+					{
+						t = a[i];
+						a[i ++] = a[j];
+						a[j --] = t;
+					}
+				}
+			}
+			else
+			{
+				while (i <= j)
+				{
+					while (a[i][property] > p) i ++;
+					while (a[j][property] < p) j --;
+					if (i <= j)
+					{
+						t = a[i];
+						a[i ++] = a[j];
+						a[j --] = t;
+					}
+				}
+			}
+			if (left < j) quicksortBy(a, left, j, ascending, property);
+			if (i < right) quicksortBy(a, i, right, ascending, property);
+		}
 		
 		
 	}

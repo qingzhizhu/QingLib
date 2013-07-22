@@ -24,9 +24,11 @@ package test.as3
 			   
 			   square = new Shape();
 				  square.graphics.lineStyle(3, 0);
-				  square.graphics.lineGradientStyle(GradientType.LINEAR, [0xFFF, 0xFF], [100, 100], [0, 0xFF], gradientMatrix, SpreadMethod.REPEAT);
-				  square.graphics.drawRect(0, 0, 200, 4);
-				  square.x = square.y = 50;
+				  square.graphics.lineGradientStyle(GradientType.LINEAR, [0xFF0000, 0xFF], [100, 100], [0, 0xFF], gradientMatrix, SpreadMethod.REPEAT);
+				  //square.graphics.drawRect(0, 0, 200, 4);
+				  square.graphics.moveTo(50, 50);
+				  square.graphics.lineTo(200, 50);
+				  //square.x = square.y = 50;
 				  addChild(square);
 				  
 				  
@@ -44,7 +46,8 @@ package test.as3
 						InterpolationMethod.RGB,
 							0.9);
 				  square.graphics.drawRect(0, 0, 100, 100);
-				  var grid:Rectangle = new Rectangle(20, 20, 60, 60);
+				  var grid:Rectangle = new Rectangle(20, 10, 60, 80);	//20*2+60=100
+				  //var grid:Rectangle = new Rectangle(30, 30, 10, 10);
 				  square.scale9Grid = grid ;
 				  addChild(square);
 				  square.x = square.y = 100;
@@ -62,7 +65,7 @@ package test.as3
 				  
 				square.scaleX *= scaleFactor;
 				square.scaleY *= scaleFactor;
-				if (square.scaleX > 2.0) {
+				if (square.scaleX > 5.0) {
 						   scaleFactor = 0.99;
 					  }
 				if (square.scaleX < 1.0) {
