@@ -38,7 +38,7 @@ package com.qing.ane.billing
 			_publicKey = key;
 		}
 		
-		/* INTERFACE com.kun.billing.IPayment */
+		/* INTERFACE com.qing.billing.IPayment */
 		
 		public function buyItem(productId:String, onSuccess:Function, onFail:Function = null):void 
 		{
@@ -143,7 +143,7 @@ package com.qing.ane.billing
 			
 		}
 		
-		/* INTERFACE com.kun.billing.IPayment */
+		/* INTERFACE com.qing.billing.IPayment */
 		
 		public function buyItem(productId:String, onSuccess:Function, onFail:Function = null):void 
 		{

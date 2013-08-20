@@ -16,7 +16,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'2013/7/15'</value>
+      <value>'2013/8/20'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -33,6 +33,7 @@
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
       <path-element>D:\git\QingLib\mobile\src</path-element>
+      <path-element>D:\git\QingLib\as3\src</path-element>
       <path-element>D:\git\QingLib\src</path-element>
       <path-element>D:\git\QingLib\assets</path-element>
       <path-element>D:\git\Starling-Framework\starling\src</path-element>
@@ -46,7 +47,7 @@
     </source-path>
   </compiler>
   <file-specs>
-    <path-element>D:\git\QingLib\mobile\src\test\punk\Main.as</path-element>
+    <path-element>D:\git\QingLib\mobile\src\demo\stagetext\StageTextExample.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>

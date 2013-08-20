@@ -17,6 +17,11 @@ package com.qing.utils
 			return String( ((min < 10) ? ("0" + min) : min) + ":" +((sec < 10) ? ("0" + sec) : sec) );
 		}
 		
+		public static function getDateStr():String {
+			var date : Date = new Date();
+			return (date.monthUTC + 1) + "-" + date.dateUTC + " " + date.hoursUTC + ":" + date.minutesUTC;
+		}
+		
 	}
 
 }

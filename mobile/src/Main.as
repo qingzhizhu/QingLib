@@ -1,5 +1,8 @@
 package 
 {
+	import com.adobe.utils.DateUtil;
+	import com.adobe.utils.DateUtil;
+	import com.qing.utils.DateUtils;
 	import flash.desktop.NativeApplication;
 	import flash.events.Event;
 	import flash.display.Sprite;
@@ -30,6 +33,9 @@ package
 			
 			trace("This is the [mobile] project folder!");
 			
+			var date : Date = new Date();
+			trace(date.toLocaleDateString, "\n", date.toLocaleString(), "\n", date.toString(), date.toUTCString());
+			trace(DateUtils.getDateStr());
 		}
 		
 		private function deactivate(e:Event):void 

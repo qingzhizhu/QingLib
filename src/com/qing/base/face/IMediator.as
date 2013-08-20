@@ -46,7 +46,7 @@ package com.qing.base.face
 		/**
 		 * 关心事件的回调函数
 		 * @param e 
-		 * @see com.kun.event.BaseEvent
+		 * @see com.qing.event.BaseEvent
 		 */
 		function handleCareOfEvents(e:BaseEvent):void;
 		/**

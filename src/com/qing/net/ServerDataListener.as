@@ -17,7 +17,7 @@ package com.qing.net
 			
 		}
 		
-		/* INTERFACE com.kun.net.IServerDataListener */
+		/* INTERFACE com.qing.net.IServerDataListener */
 		
 		public function dataReceived(responseCode:int, serviceId:String, data:Object, error:Object, maintenanceMode:Object = null):void 
 		{

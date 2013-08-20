@@ -44,7 +44,7 @@ package com.qing.net.http
 			//resetErrorObject();
 		//}
 		//
-		///* INTERFACE com.kun.net.IServerConnection */
+		///* INTERFACE com.qing.net.IServerConnection */
 		///**
 		 //* 对应java的service服务。特殊需求子类覆盖
 		 //* @param	tempServerCall

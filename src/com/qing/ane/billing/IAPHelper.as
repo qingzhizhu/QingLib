@@ -1,9 +1,9 @@
 package com.qing.ane.billing 
 {
 	import com.greensock.TimelineMax;
-	//import com.kun.common.billing.IPurchaseService;
-	//import com.kun.common.HTTPServiceEvent;
-	//import com.kun.common.logging.Log;
+	//import com.qing.common.billing.IPurchaseService;
+	//import com.qing.common.HTTPServiceEvent;
+	//import com.qing.common.logging.Log;
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	import flash.events.MouseEvent;
@@ -11,7 +11,7 @@ package com.qing.ane.billing
 	import flash.net.URLRequest;
 	import flash.net.URLRequestMethod;
 	
-	//import com.kun.slotmachine.Game;
+	//import com.qing.slotmachine.Game;
 	
 	CONFIG::IOS
 		import com.adobe.nativeExtensions.Transaction;

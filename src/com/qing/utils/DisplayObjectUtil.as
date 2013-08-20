@@ -69,20 +69,27 @@ package com.qing.utils
 			g.drawRect(0, 0, source.width, source.height);
 		}
 		/**
-		 * 在sprite 画个灰层
+		 * 在sprite\shape 画个灰层
 		 * @param	source
 		 * @param	isAdd 默认是画，false是clear
 		 * @param	color
 		 * @param	alpha
 		 */
-		public static function drawGrayLayer(source:Sprite, isAdd:Boolean=true, color:uint = 0, alpha:Number = 0.6):void {
-			var g : Graphics = source.graphics;
-			if(isAdd){
-				g.beginFill(color, alpha);
-				g.drawRect(0, 0, source.width, source.height);
-				g.endFill();
-			}else {
-				g.clear();
+		public static function drawGrayLayer(source:*, isAdd:Boolean=true, color:uint = 0, alpha:Number = 0.6):void {
+			var g : Graphics = null;
+			if(source.hasOwnProperty("graphics")){
+				g = source.graphics;
+			}else if(source is Graphics){
+				g = source;
+			}
+			if(g){
+				if(isAdd){
+					g.beginFill(color, alpha);
+					g.drawRect(0, 0, source.width, source.height);
+					g.endFill();
+				}else {
+					g.clear();
+				}
 			}
 		}
 		
