@@ -122,8 +122,14 @@ package com.qing.utils
 			}
 		}
 		
-		public static function drawGrayLayerBySizePos(source:Sprite, posX:int, posY:int, wid:int, hei:int, isAdd:Boolean=true, color:uint = 0, alpha:Number = 0.6):void {
-			var g : Graphics = source.graphics;
+		public static function drawGrayLayerBySizePos(source:*, posX:int, posY:int, wid:int, hei:int, isAdd:Boolean=true, color:uint = 0, alpha:Number = 0.6):void {
+			var g : Graphics = null;
+			if(source.hasOwnProperty("graphics")){
+				g = source.graphics;
+			}else if(source is Graphics){
+				g = source;
+			}
+			if (!g) return;
 			if (isAdd) {
 				g.clear();
 				g.beginFill(color, alpha);
