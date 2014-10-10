@@ -1,0 +1,4 @@
+`id`,`zh`,`en`
+`btn_ok`,`确定`,`Confirm`
+`btn_ok`,`123456确定,加英文"逗号",啊12345`,`123Confirm,include "symbol". 123456`
+`test`,`你好：#1#,今天天气：#2#`,`Hi, #1#, Weather:#2# at today.`

@@ -28,6 +28,7 @@
     <option allowSourcePathOverlap="False" />
     <option benchmark="False" />
     <option es="False" />
+    <option inline="False" />
     <option locale="" />
     <option loadConfig="" />
     <option optimize="True" />
@@ -75,20 +76,21 @@
   </library>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>
-    <compile path="src\test\mobile\AccelerometerTest.as" />
+    <compile path="src\test\tool\LanguageTest.as" />
   </compileTargets>
   <!-- Paths to exclude from the Project Explorer tree -->
   <hiddenPaths>
-    <!-- example: <hidden path="..." /> -->
+    <hidden path="obj" />
   </hiddenPaths>
   <!-- Executed before build -->
   <preBuildCommand />
   <!-- Executed after build -->
-  <postBuildCommand alwaysRun="False">"D:\Python27\python.exe" "$(ProjectDir)\..\add-opt-in.py" "$(OutputDir)\$(OutputName)"</postBuildCommand>
+  <postBuildCommand alwaysRun="False" />
   <!-- Other project options -->
   <options>
     <option showHiddenPaths="True" />
     <option testMovie="Default" />
+    <option testMovieCommand="" />
   </options>
   <!-- Plugin storage -->
   <storage />
